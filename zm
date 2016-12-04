@@ -1,0 +1,95 @@
+import java.util.Scanner;
+
+public class ZM {
+
+	public static void main(String[] args) {
+		
+	
+		System.out.println("Podaj dodatnią liczbę");
+		int liczba;
+		Scanner wczytane = new Scanner(System.in);
+		liczba = wczytane.nextInt();
+		System.out.println("To jest twoja liczba:");
+		if (liczba>=1024){
+			System.out.print("1");
+			liczba = liczba-1024;
+		}
+			else if (liczba<1024){
+				System.out.print("0");
+			}
+		
+		if (liczba>=512){
+			System.out.print("1");
+			liczba = liczba-512;
+		}
+		else if (liczba<512){
+			System.out.print("0");
+		}
+		if (liczba>=256){
+			System.out.print("1");
+			liczba = liczba-256;
+		}
+		else if (liczba<256){
+			System.out.print("0");
+		}
+		if (liczba>=128){
+			System.out.print("1");
+			liczba = liczba-128;
+		}
+		else if (liczba<128){
+			System.out.print("0");
+		}
+		if (liczba>=64){
+			System.out.print("1");
+			liczba = liczba-64;
+		}
+		else if (liczba<64){
+			System.out.print("0");
+		}
+		if (liczba>=32){
+			System.out.print("1");
+			liczba = liczba-32;
+		}
+		else if (liczba<32){
+			System.out.print("0");
+		}
+		if (liczba>=16){
+			System.out.print("1");
+			liczba = liczba-16;
+		}
+		else if (liczba<16){
+			System.out.print("0");
+		}
+		if (liczba>=8){
+			System.out.print("1");
+			liczba = liczba-8;
+		}
+		else if (liczba<8){
+			System.out.print("0");
+		}
+		if (liczba>=4){
+			System.out.print("1");
+			liczba = liczba-4;
+		}
+		else if (liczba<4){
+			System.out.print("0");
+		}
+		if (liczba>=2){
+			System.out.print("1");
+			liczba = liczba-2;
+		}
+		else if (liczba<2){
+			System.out.print("0");
+		}
+		if (liczba>=1){
+			System.out.print("1");
+			liczba = liczba-1;
+		}
+		else if (liczba<1){
+			System.out.print("0");
+		}
+		
+		
+	}
+
+}
