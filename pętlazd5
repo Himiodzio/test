@@ -1,0 +1,49 @@
+
+
+import java.util.Scanner;
+
+public class Pzd5 {
+
+	public static void main(String[] args) {
+
+		Scanner liczba = new Scanner(System.in);
+		int granica = 0;
+        int całość = 0;
+        int suma =0;
+        int min = 0;
+        int max = 0;
+		int cyfry;
+		System.out.println("Pod pierwszą cyfrę: ");
+		while (granica == 0) {
+			cyfry = liczba.nextInt();
+			if (min<cyfry){
+			
+				min = cyfry;
+			}
+			if (max>cyfry){
+				max=cyfry;
+			}
+           całość = całość+cyfry;
+           suma = suma+cyfry;
+        
+           
+			if (cyfry != 0) {
+
+				System.out.println("Podaj kolejną cyfrę");
+			} else if (cyfry == 0) {
+
+				System.out.println("Zakończyłeś wprowadzanie cyfr");
+				break;
+
+			}
+		}
+całość = całość/2;
+
+		System.out.println("Średnia artymetyczna to: " + całość);
+		System.out.println("Suma wszystkich liczb to: " + suma);
+	System.out.println("Maksymalna liczba to:" + max + "minimalna liczba to: " + min);
+		
+	
+	}
+
+}
