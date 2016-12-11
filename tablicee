@@ -1,0 +1,62 @@
+import java.util.Arrays;
+
+public class Main {
+
+	public static void main(String[] args) {
+
+		int[] a = { 3, 4, 5 }; //odwracanie tablic
+		int l = a.length;
+		for (int i = 0; i < l / 2; ++i) {
+			int first = a[i];
+			int last = a[l - 1 - i];
+			a[i] = last;
+			a[l - 1 - i] = first;
+		}
+		System.out.println(Arrays.toString(a));
+
+		int[] b = { 1, 1, 2 };          //łączenie tablic
+		int[] c = { 1 };
+		int[] d = new int[b.length + c.length];
+		for (int i = 0; i < b.length; ++i) {
+			d[i] = b[i];
+		}
+		for (int i = 0; i < c.length; ++i) {
+			d[i + b.length] = c[i];
+		}
+		System.out.println(Arrays.toString(d));
+System.out.println("PRZERWA1");
+		int[] e = { 1, 2, 3, 4, 5, 6 }; // wyznaczanie elementów tablicy od 3 wyrazu
+		for (int i = 0; i < 3; i++) {
+			System.out.println(e[i + 2]);
+		}
+		System.out.println("przerwa2   ");
+		int s = 0;
+		int[][] matrix = { {1,2,3}, {4,5,6}, {7,8,9} };
+		for (int i = 0; i < matrix.length; i++) {
+			for (int j = 0; j < i; j++) {
+				s += matrix[i][j];
+			}
+		}
+		System.out.println(s);
+		System.out.println("PRZERWA3");
+		
+		int[] f = { 1,2,2,3,4 }; //wypisywanie elementów powtarzających się
+		int[] g = { 2,3,4,5,6 };
+		for (int i = 0; i < f.length; i++) {
+			for (int j = 0; j < g.length; j++) {
+				if (f[i] == g[j]) {
+					System.out.println(f[i]);
+				}
+			}
+		}
+		for (int i = 0; i < f.length; i++) {
+			for (int j = 0; j < g.length; j++) {
+				if (f[i] + g[j] == 6) {
+					System.out.println(f[i] + " " + g[j]);
+				}
+			}
+		}
+		
+	}
+
+}
