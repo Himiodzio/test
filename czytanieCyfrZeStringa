@@ -1,0 +1,21 @@
+
+import java.util.Scanner;
+
+public class zad4 {
+
+	public static void main(String[] args) {
+
+		String słowo;
+		Scanner wczytana = new Scanner(System.in);
+		słowo = wczytana.nextLine();
+		                                                                           //char inne = 0;
+
+		for (int i = 0; i < słowo.length(); i++) {
+
+			if (Character.isDigit(słowo.charAt(i)))
+				System.out.println(słowo.charAt(i));
+		}
+
+	}
+
+}
