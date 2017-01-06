@@ -1,21 +1,27 @@
+package lancuchy;
 
 import java.util.Scanner;
 
 public class zad4 {
 
 	public static void main(String[] args) {
-
-		String słowo;
+		int pusta = 0;
+		int suma = 0;
+		String slowoBezPolskiegoZnaku;
 		Scanner wczytana = new Scanner(System.in);
-		słowo = wczytana.nextLine();
-		                                                                           //char inne = 0;
+		slowoBezPolskiegoZnaku = wczytana.nextLine();
+        System.out.print("Cyfry użyte w zdaniu:   ");
+		for (int i = 0; i < slowoBezPolskiegoZnaku.length(); i++) {
 
-		for (int i = 0; i < słowo.length(); i++) {
+			if (Character.isDigit(slowoBezPolskiegoZnaku.charAt(i))) {
+				System.out.print(slowoBezPolskiegoZnaku.charAt(i) + ",  ");
+				pusta = Character.getNumericValue(slowoBezPolskiegoZnaku.charAt(i));
+				suma += pusta;
+			}
 
-			if (Character.isDigit(słowo.charAt(i)))
-				System.out.println(słowo.charAt(i));
 		}
-
+		System.out.println("");
+		System.out.println("Suma cyfr znajdujących się w zdaniu: " + slowoBezPolskiegoZnaku + "   to: " + suma);
 	}
 
 }
