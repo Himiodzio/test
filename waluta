@@ -1,0 +1,151 @@
+package asdas;
+
+import java.io.*;
+import java.util.*;
+import java.util.Scanner;
+
+public class nowe {
+
+	static String[] tablicaWalut = new String[] { "USD", "EUR", "GPB", "PLN" }; // tablica walut
+	static Scanner wczytana = new Scanner(System.in);
+
+	public static String[][] tablica() throws FileNotFoundException {
+		String[] s = new String[4];// kod zliczający liczbę linijek pliku wpisujący go do zmiennej zamiast 4
+		String[][] tab = new String[4][3];
+		FileReader fr = new FileReader("kursy_walut2.csv"); //plik czytany
+		Scanner plik = new Scanner(fr);
+		int i = 0;
+
+		while (plik.hasNext()) {
+			s[i] = plik.nextLine();
+			String[] parts = s[i].split(";");
+			tab[i][0] = parts[0];
+			tab[i][1] = parts[1];
+			tab[i][2] = parts[2];
+
+			i++;
+		}
+
+		return tab;
+	}
+
+	public static int menu() { //menu <wybór>
+		int liczba;
+
+		System.out.println("Co chesz zrobić?");
+		System.out.println("1) Kupić danej waluty");
+		System.out.println("2) Sprzedać danej waluty");
+		System.out.println("3) Wymienić z danej waluty na inną");
+		System.out.println("4) Kupić rzeczy");
+		System.out.println("0) koniec");
+		liczba = wczytana.nextInt();
+
+		return liczba;
+
+	}
+
+	public static int waluta() {
+		int liczba;
+
+		System.out.println("Wybierz walutę:");
+		System.out.println("1) USD");
+		System.out.println("2) EUR");
+		System.out.println("3) GPB");
+		System.out.println("4) PLN");
+		// przypisanie nazw z tablicy!!
+		liczba = wczytana.nextInt();
+
+		return liczba;
+
+
+	}
+
+	public static void main(String[] args) throws IOException {
+		String[][] newtab = tablica();
+		int wybor = menu();
+		int kwota1;
+		double kwota2;
+		double kwota3;
+		int kwota4;
+		int w2 = 4;
+try{
+		while (wybor != -100) { //usunięcie !=0, bo w sumie jest wyjątek na wszystko inne, a za to możemy dodać "komunikat" o zakończeniu
+			
+				
+			
+			if (wybor == 1) {
+				// Procedura kupna
+				System.out.println("Co chcesz kupić??");
+				int w1 = waluta();
+				System.out.println("Ile chcesz wymienić?? " + tablicaWalut[w1 - 1]);
+				kwota1 = wczytana.nextInt();
+				kwota2 = kwota1 * Double.parseDouble(newtab[w1 - 1][2]);
+				System.out.println(kwota2 + "PLN");
+
+			} else if (wybor == 2) {
+				// Procedura sprzedaży
+				System.out.println("Co chcesz sprzedać??");
+				int w1 = waluta();
+				System.out.println("Ile chcesz wymienić <podaj kwotę>? " + tablicaWalut[w1 - 1]);
+				kwota1 = wczytana.nextInt();
+				kwota2 = kwota1 * Double.parseDouble(newtab[w1 - 1][1]);
+				System.out.println(kwota2 + "PLN");
+			} else if (wybor == 3) {
+				// procedura wymiany
+				System.out.println("Ile chcesz wymienić??");
+				kwota1 = wczytana.nextInt();
+				System.out.println("Z jakiej waluty??");
+				int w1 = waluta();
+				kwota2 = kwota1 * Double.parseDouble(newtab[w1 - 1][1]);
+				System.out.println("Na jaką??");
+				int ww = waluta();
+				kwota3 = kwota2 / Double.parseDouble(newtab[ww - 1][2]);
+
+				System.out.println(kwota3);
+			}else if (wybor ==0){ //koniec programu
+				System.out.println("Dziękujemy za skorzystanie z programu");
+				break;
+
+			}else if (wybor ==4){            //trololololo, ale mam pewien pomysł do tego, ogarnę w niedzielę wieczorem
+				System.out.println("Ile chcesz wydać?");
+				Thread.sleep(1200);
+				System.err.println("Kwota musi zostać podana w Nilfgaardzkich florenach!!!!");
+				Thread.sleep(3790);
+				System.out.println("Nie no żartowałem");
+				Thread.sleep(2495);
+				System.out.println("A może jednak nie?");
+				Thread.sleep(2890);
+				System.out.println("Dobra, żartowałem... Kwota musi zostać podana w złotówkach");
+				kwota4 = wczytana.nextInt();
+				Thread.sleep(400);
+				System.out.println("Za taką kwotę kupisz: ");
+				Thread.sleep(500); 
+				System.out.println(kwota4/3100 + " GTX 1080");
+				Thread.sleep(550);
+				System.out.println(kwota4/323 + " Warunków na wydziale");
+				Thread.sleep(580);
+				System.out.println(kwota4/40000 + " Fajnych samochodów");
+				Thread.sleep(800);
+				System.out.println(kwota4/4 + " soków 100%");
+				Thread.sleep(1000);
+			}
+		
+			
+		
+			
+			System.out.println("\nWciśnij Enter, aby kontynuować...");
+			System.in.read();
+
+			wybor = menu();
+		}
+}
+
+catch (Exception e){  //zle podane dane kończą działanie programu z komunikatem
+	System.out.println("Błędne dane, program zakończył działanie");
+	
+}
+
+	
+	}
+	
+}
