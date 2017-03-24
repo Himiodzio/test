@@ -1,0 +1,56 @@
+// Funkcje, wskaźniki - zadania \\24.03.2017
+
+Ad.3
+
+int sprawdzT(int tab[], n){
+	int tab2 = tab[0];
+	for (int i = 1; i<n; i++){
+		if (tab2<tab[i]){
+			tab2 == tab[i];
+		}
+		return tab2;
+	}
+  -------------------------------------
+	
+	AD4 - sprawdzić!
+  int main(int argc, char *argv[])  
+{  
+  int i,n,rob,nieparzysta,pierwiastek,liczbacyfr,potegadziesiatki;  
+      
+  cout << "Program sprawdza, czy liczba konczy sie swoim pierwiastkiem.\n";   
+    
+  cout << "n=";  
+  cin  >> n;  
+        
+  pierwiastek=0;  
+  nieparzysta=1;  
+  rob = n;  
+    
+  while (rob>=0)  
+    {  
+      rob -= nieparzysta;      
+      nieparzysta+=2;  
+      pierwiastek++;  
+    }  
+  pierwiastek--;  
+
+  liczbacyfr = 0;  
+  rob=pierwiastek;  
+  while(rob)  
+    {  
+      liczbacyfr++;  
+      rob/=10;  
+    }   
+
+  potegadziesiatki=1;  
+  for(i=1;i<=liczbacyfr;i++)  
+    potegadziesiatki*=10;    
+      
+  if (n % potegadziesiatki == pierwiastek)    
+    cout << "\n\nTAK\n\n" << n << " konczy sie liczba " << pierwiastek << "\n\n";  
+  else    
+    cout << "\n\nNIE\n\n" << n << " NIE konczy sie liczba " << pierwiastek << "\n\n";    
+  system("PAUSE");    
+  return 0;  
+}  
+-------------------------------------------
