@@ -1,0 +1,48 @@
+#include <iostream>
+using namespace std;
+/* run this program using the console pauser or add your own getch, system("pause") or input loop */
+int liczbyP(int a, int b, int c){
+	if(((a*a)+(b*b))==(c*c))
+	return 1;
+	else
+	return 0;
+}
+
+
+
+int main() {
+	int a;
+	int b;
+	int c;
+	
+cout << "\n Podaj pierwsza liczbe (a)\n";
+cin >> a;
+cout << "\n Podaj druga liczbe (b)\n";
+cin >> b;
+cout << "\n Podaj trzecia liczbe (c)\n";
+cin >> c;
+
+
+if (liczbyP(a,b,c) == 0){
+	cout << "Twoja liczba nie jest liczba pitagorejska :( ) \n";
+}
+else if (liczbyP(a,b,c) == 1){
+	cout << "Twoja liczba jest liczba pitagorejska :) \n \n";
+	
+	
+	//------------------------------------------------------------
+	for(int i =1; i<=10; i++){
+		for(int j =i; j<=10; j++){
+			for(int k =j; k<=10; k++){
+				
+if (liczbyP(i,j,k) == 1){
+	cout << "Twoja liczba jest liczba pitagorejska, sa nimi:  " << i << " " << j << " " << k << " \n";
+	 
+			}
+		}
+	}
+}
+
+	
+}
+}
